@@ -11,6 +11,7 @@
 		8AA6FB41272B609A005E28F2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA6FB40272B609A005E28F2 /* ContentView.swift */; };
 		8AA6FB43272B609B005E28F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AA6FB42272B609B005E28F2 /* Assets.xcassets */; };
 		8AA6FB46272B609B005E28F2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AA6FB45272B609B005E28F2 /* Preview Assets.xcassets */; };
+		8AA6FB4E272B8759005E28F2 /* GPUPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA6FB4D272B8759005E28F2 /* GPUPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		8AA6FB42272B609B005E28F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8AA6FB45272B609B005E28F2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8AA6FB47272B609B005E28F2 /* ACG.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ACG.entitlements; sourceTree = "<group>"; };
+		8AA6FB4D272B8759005E28F2 /* GPUPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPUPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				8AA6FB3E272B609A005E28F2 /* ACGApp.swift */,
 				8AA6FB40272B609A005E28F2 /* ContentView.swift */,
+				8AA6FB4D272B8759005E28F2 /* GPUPicker.swift */,
 				8AA6FB42272B609B005E28F2 /* Assets.xcassets */,
 				8AA6FB47272B609B005E28F2 /* ACG.entitlements */,
 				8AA6FB44272B609B005E28F2 /* Preview Content */,
@@ -139,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AA6FB4E272B8759005E28F2 /* GPUPicker.swift in Sources */,
 				8AA6FB41272B609A005E28F2 /* ContentView.swift in Sources */,
 				8AA6FB3F272B609A005E28F2 /* ACGApp.swift in Sources */,
 			);
@@ -268,6 +272,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ACG/ACG.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -276,14 +281,17 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.alyxferrari.ACG;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alyxferrari.acg;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -295,6 +303,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ACG/ACG.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -303,14 +312,17 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.alyxferrari.ACG;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alyxferrari.acg;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
