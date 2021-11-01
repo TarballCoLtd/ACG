@@ -17,6 +17,7 @@ struct GPUPicker: View {
     // generation constants
     private static let amdGenerations: [String] = ["Polaris - RX 400 & 500 series", "Navi - RX 5000 series", "Big Navi - RX 6000 series", "Vega"]
     private static let nvidiaGenerations: [String] = ["Kepler - GTX 700 series", "Maxwell - GTX 900 series", "Pascal - GTX 10 series", "Turing - GTX 16 series", "Turing - RTX 20 series", "Ampere - RTX 30 series"]
+    private static let intelGenerations: [String] = ["Ivy Bridge - 3rd gen", "Haswell - 4th gen", "Broadwell - 5th gen", "Skylake - 6th gen", "Kaby Lake - 7th gen", "Coffee/Comet/Ice Lake - 8th, 9th, & 10th gen", "Rocket Lake - 11th gen"]
     // amd generation cards
     private static let polarisCards: [String] = ["RX 460", "RX 470", "RX 480", "RX 550", "RX 560", "RX 570", "RX 580", "RX 590"]
     private static let naviCards: [String] = ["RX 5500", "RX 5500 XT", "RX 5600", "RX 5600 XT", "RX 5700", "RX 5700 XT"]
@@ -29,9 +30,17 @@ struct GPUPicker: View {
     private static let turing16Cards: [String] = ["GTX 1650", "GTX 1650 SUPER", "GTX 1660", "GTX 1660 SUPER", "GTX 1660 Ti"]
     private static let turing20Cards: [String] = ["RTX 2060", "RTX 2060 SUPER", "RTX 2070", "RTX 2070 SUPER", "RTX 2080", "RTX 2080 SUPER", "RTX 2080 Ti", "Titan RTX"]
     private static let ampereCards: [String] = ["RTX 3060", "RTX 3060 Ti", "RTX 3070", "RTX 3070 Ti", "RTX 3080", "RTX 3080 Ti", "RTX 3090"]
+    // intel generation cards
+    private static let ivyBridgeCards: [String] = ["HD 2500", "HD 4000", "HD P4000"]
+    private static let haswellCards: [String] = ["HD 4200", "HD 4400", "HD 4600", "HD P4600", "HD P4700", "HD 5000", "HD 5100"]
+    private static let broadwellCards: [String] = ["HD 5300", "HD 5500", "HD 5600", "HD P5700", "HD 6000", "HD 6100", "HD 6200", "Iris Pro P6300"]
+    private static let skylakeCards: [String] = ["HD 515", "HD 520", "HD 530", "HD P530", "Iris 540", "Iris 550", "Iris Pro P555", "Iris Pro 580", "Iris Pro P580"]
+    private static let kabyLakeCards: [String] = ["HD 615", "HD 620", "HD 630", "Iris Plus 640", "Iris Plus 650"]
+    private static let coffeeCometIceCards: [String] = ["UHD 615", "UHD 617", "UHD 620", "UHD 630", "Iris Plus 645", "Iris Plus 655", "Iris Plus G4", "Iris Plus G7", "Iris Xe"]
+    private static let rocketLakeCards: [String] = ["UHD 730", "UHD 750", "UHD P750"]
     // vendor
     @State private var vendor: String = "Vendor"
-    @State private var vendorArray: [String] = ["AMD", "NVIDIA"]
+    @State private var vendorArray: [String] = ["AMD", "NVIDIA", "Intel"]
     // generation
     @State private var generation: String = "Generation"
     @State private var generationDisabled: Bool = true
@@ -60,12 +69,13 @@ struct GPUPicker: View {
                             card = "Card"
                             generationDisabled = false
                             cardDisabled = true
+                            vendor = vendorArray[index]
                             if index == 0 {
-                                vendor = "AMD"
                                 generationArray = GPUPicker.amdGenerations
                             } else if index == 1 {
-                                vendor = "NVIDIA"
                                 generationArray = GPUPicker.nvidiaGenerations
+                            } else if index == 2 {
+                                generationArray = GPUPicker.intelGenerations
                             }
                             vendorIndex = index
                             generationIndex = -1
@@ -80,7 +90,7 @@ struct GPUPicker: View {
                             generation = element.components(separatedBy: " - ")[0]
                             card = "Card"
                             cardDisabled = false
-                            if vendor == "AMD" {
+                            if vendorIndex == 0 {
                                 if index == 0 {
                                     cardArray = GPUPicker.polarisCards
                                 } else if index == 1 {
@@ -90,7 +100,7 @@ struct GPUPicker: View {
                                 } else if index == 3 {
                                     cardArray = GPUPicker.vegaCards
                                 }
-                            } else if vendor == "NVIDIA" {
+                            } else if vendorIndex == 1 {
                                 if index == 0 {
                                     cardArray = GPUPicker.keplerCards
                                 } else if index == 1 {
@@ -103,6 +113,22 @@ struct GPUPicker: View {
                                     cardArray = GPUPicker.turing20Cards
                                 } else if index == 5 {
                                     cardArray = GPUPicker.ampereCards
+                                }
+                            } else if vendorIndex == 2 {
+                                if index == 0 {
+                                    cardArray = GPUPicker.ivyBridgeCards
+                                } else if index == 1 {
+                                    cardArray = GPUPicker.haswellCards
+                                } else if index == 2 {
+                                    cardArray = GPUPicker.broadwellCards
+                                } else if index == 3 {
+                                    cardArray = GPUPicker.skylakeCards
+                                } else if index == 4 {
+                                    cardArray = GPUPicker.kabyLakeCards
+                                } else if index == 5 {
+                                    cardArray = GPUPicker.coffeeCometIceCards
+                                } else if index == 6 {
+                                    cardArray = GPUPicker.rocketLakeCards
                                 }
                             }
                             generationIndex = index
