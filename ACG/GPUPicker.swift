@@ -34,9 +34,9 @@ struct GPUPicker: View {
     private static let ivyBridgeCards: [String] = ["HD 2500", "HD 4000", "HD P4000"]
     private static let haswellCards: [String] = ["HD 4200", "HD 4400", "HD 4600", "HD P4600", "HD P4700", "HD 5000", "HD 5100"]
     private static let broadwellCards: [String] = ["HD 5300", "HD 5500", "HD 5600", "HD P5700", "HD 6000", "HD 6100", "HD 6200", "Iris Pro P6300"]
-    private static let skylakeCards: [String] = ["HD 515", "HD 520", "HD 530", "HD P530", "Iris 540", "Iris 550", "Iris Pro P555", "Iris Pro 580", "Iris Pro P580"]
-    private static let kabyLakeCards: [String] = ["HD 615", "HD 620", "HD 630", "Iris Plus 640", "Iris Plus 650"]
-    private static let coffeeCometIceCards: [String] = ["UHD 615", "UHD 617", "UHD 620", "UHD 630", "Iris Plus 645", "Iris Plus 655", "Iris Plus G4", "Iris Plus G7", "Iris Xe"]
+    private static let skylakeCards: [String] = ["HD 510", "HD 515", "HD 520", "HD 530", "HD P530", "Iris 540", "Iris 550", "Iris Pro P555", "Iris Pro 580", "Iris Pro P580"]
+    private static let kabyLakeCards: [String] = ["HD 610", "HD 615", "HD 620", "HD 630", "Iris Plus 640", "Iris Plus 650"]
+    private static let coffeeCometIceCards: [String] = ["UHD 610", "UHD 615", "UHD 617", "UHD 620", "UHD 630", "Iris Plus 645", "Iris Plus 655", "Iris Plus G4", "Iris Plus G7", "Iris Xe"]
     private static let rocketLakeCards: [String] = ["UHD 730", "UHD 750", "UHD P750"]
     // vendor
     @State private var vendor: String = "Vendor"
@@ -285,6 +285,72 @@ struct GPUPicker: View {
                     infoText = "This card is not supported in any version of macOS. You may be able to boot with this card, but you will have no GPU acceleration. This means that macOS will be extremely laggy and you will experience artifacting and glitching. In addition, nothing 3D accelerated will work."
                 }
             } else if generationIndex == 5 { // ampere
+                if cardIndex == -1 {
+                    return
+                } else {
+                    status = GPUPicker.unsupported
+                    infoText = "This card is not supported in any version of macOS. You may be able to boot with this card, but you will have no GPU acceleration. This means that macOS will be extremely laggy and you will experience artifacting and glitching. In addition, nothing 3D accelerated will work."
+                }
+            }
+        } else if vendorIndex == 2 { // intel
+            if generationIndex == 0 { // ivy bridge
+                if cardIndex == -1 {
+                    return
+                } else {
+                    status = GPUPicker.partialSupported
+                    infoText = "This card is natively supported by macOS's drivers up to macOS Catalina. You will need WhateverGreen and framebuffer patches to get this card working.\nSupported macOS versions: Mac OS X Lion (10.7) to macOS Catalina (10.15)"
+                }
+            } else if generationIndex == 1 { // haswell
+                if cardIndex == -1 {
+                    return
+                } else if cardIndex == 3 || cardIndex == 4 { // HD P4600 & P4700
+                    status = GPUPicker.possibleSupported
+                    infoText = "This card is theoretically natively supported, however support has not been confirmed. You will need WhateverGreen and framebuffer patches to get this card working.\nSupported macOS versions: Mac OS X Mountain Lion (10.8) to macOS Monterey (12)"
+                } else {
+                    status = GPUPicker.supported
+                    infoText = "This card is natively supported by macOS's drivers. You will need WhateverGreen and framebuffer patches to get this card working.\nSupported macOS versions: Mac OS X Mountain Lion (10.8) to macOS Monterey (12)"
+                }
+            } else if generationIndex == 2 { // broadwell
+                if cardIndex == -1 {
+                    return
+                } else if cardIndex == 3 { // HD P5700
+                    status = GPUPicker.possibleSupported
+                    infoText = "This card is theoretically natively supported, however support has not been confirmed. You will need WhateverGreen and framebuffer patches to get this card working.\nSupported macOS versions: Mac OS X Yosemite (10.10) to macOS Monterey (12)"
+                } else {
+                    status = GPUPicker.supported
+                    infoText = "This card is natively supported by macOS's drivers. You will need WhateverGreen and framebuffer patches to get this card working.\nSupported macOS versions: Mac OS X Yosemite (10.10) to macOS Monterey (12)"
+                }
+            } else if generationIndex == 3 { // skylake
+                if cardIndex == -1 {
+                    return
+                } else if cardIndex == 0 { // HD 510
+                    status = GPUPicker.unsupported
+                    infoText = "This card is not supported in any version of macOS. You may be able to boot with this card, but you will have no GPU acceleration. This means that macOS will be extremely laggy and you will experience artifacting and glitching. In addition, nothing 3D accelerated will work."
+                } else {
+                    status = GPUPicker.supported
+                    infoText = "This card is natively supported by macOS's drivers. You will need WhateverGreen and framebuffer patches to get this card working.\nSupported macOS versions: Mac OS X El Capitan (10.11) to macOS Monterey (12)"
+                }
+            } else if generationIndex == 4 { // kaby lake
+                if cardIndex == -1 {
+                    return
+                } else if cardIndex == 0 { // HD 610
+                    status = GPUPicker.unsupported
+                    infoText = "This card is not supported in any version of macOS. You may be able to boot with this card, but you will have no GPU acceleration. This means that macOS will be extremely laggy and you will experience artifacting and glitching. In addition, nothing 3D accelerated will work."
+                } else {
+                    status = GPUPicker.supported
+                    infoText = "This card is natively supported by macOS's drivers. You will need WhateverGreen and framebuffer patches to get this card working.\nSupported macOS versions: macOS Sierra (10.12) to macOS Monterey (12)"
+                }
+            } else if generationIndex == 5 { // coffee/comet/ice lake
+                if cardIndex == -1 {
+                    return
+                } else if cardIndex == 0 || cardIndex == 9 {
+                    status = GPUPicker.unsupported
+                    infoText = "This card is not supported in any version of macOS. You may be able to boot with this card, but you will have no GPU acceleration. This means that macOS will be extremely laggy and you will experience artifacting and glitching. In addition, nothing 3D accelerated will work."
+                } else {
+                    status = GPUPicker.supported
+                    infoText = "This card is natively supported by macOS's drivers. You will need WhateverGreen and framebuffer patches to get this card working.\nSupported macOS versions: macOS Catalina (10.15) to macOS Monterey (12)"
+                }
+            } else if generationIndex == 6 { // rocket lake
                 if cardIndex == -1 {
                     return
                 } else {
