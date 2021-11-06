@@ -27,9 +27,6 @@ struct GPUPicker: View {
     private static let keplerCards: [String] = ["GT 710", "GT 720", "GT 730", "GT 740", "GTX 745", "GTX 750", "GTX 750 Ti", "GTX 760", "GTX 760 Ti", "GTX 770", "GTX 780", "GTX 780 Ti", "GTX Titan", "GTX Titan Z"]
     private static let maxwellCards: [String] = ["GTX 950", "GTX 960", "GTX 970", "GTX 980", "GTX 980 Ti", "GTX Titan X"]
     private static let pascalCards: [String] = ["GT 1010", "GT 1030", "GTX 1050", "GTX 1050 Ti", "GTX 1060", "GTX 1070", "GTX 1070 Ti", "GTX 1080", "GTX 1080 Ti", "GTX Titan X", "GTX Titan Xp"]
-    private static let turing16Cards: [String] = ["GTX 1650", "GTX 1650 SUPER", "GTX 1660", "GTX 1660 SUPER", "GTX 1660 Ti"]
-    private static let turing20Cards: [String] = ["RTX 2060", "RTX 2060 SUPER", "RTX 2070", "RTX 2070 SUPER", "RTX 2080", "RTX 2080 SUPER", "RTX 2080 Ti", "Titan RTX"]
-    private static let ampereCards: [String] = ["RTX 3060", "RTX 3060 Ti", "RTX 3070", "RTX 3070 Ti", "RTX 3080", "RTX 3080 Ti", "RTX 3090"]
     // intel generation cards
     private static let ivyBridgeCards: [String] = ["HD 2500", "HD 4000", "HD P4000"]
     private static let haswellCards: [String] = ["HD 4200", "HD 4400", "HD 4600", "HD P4600", "HD P4700", "HD 5000", "HD 5100"]
@@ -107,12 +104,6 @@ struct GPUPicker: View {
                                     cardArray = GPUPicker.maxwellCards
                                 } else if index == 2 {
                                     cardArray = GPUPicker.pascalCards
-                                } else if index == 3 {
-                                    cardArray = GPUPicker.turing16Cards
-                                } else if index == 4 {
-                                    cardArray = GPUPicker.turing20Cards
-                                } else if index == 5 {
-                                    cardArray = GPUPicker.ampereCards
                                 }
                             } else if vendorIndex == 2 {
                                 if index == 0 {
@@ -269,27 +260,10 @@ struct GPUPicker: View {
                     status = GPUPicker.partialSupported
                     infoText = "This card is supported with NVIDIA's web drivers up to macOS High Sierra.\nSupported macOS versions: macOS Sierra (10.12) to macOS High Sierra (10.13)"
                 }
-            } else if generationIndex == 3 { // turing 16
-                if cardIndex == -1 {
-                    return
-                } else {
-                    status = GPUPicker.unsupported
-                    infoText = "This card is not supported in any version of macOS. You may be able to boot with this card, but you will have no GPU acceleration. This means that macOS will be extremely laggy and you will experience artifacting and glitching. In addition, nothing 3D accelerated will work."
-                }
-            } else if generationIndex == 4 { // turing 20
-                if cardIndex == -1 {
-                    return
-                } else {
-                    status = GPUPicker.unsupported
-                    infoText = "This card is not supported in any version of macOS. You may be able to boot with this card, but you will have no GPU acceleration. This means that macOS will be extremely laggy and you will experience artifacting and glitching. In addition, nothing 3D accelerated will work."
-                }
-            } else if generationIndex == 5 { // ampere
-                if cardIndex == -1 {
-                    return
-                } else {
-                    status = GPUPicker.unsupported
-                    infoText = "This card is not supported in any version of macOS. You may be able to boot with this card, but you will have no GPU acceleration. This means that macOS will be extremely laggy and you will experience artifacting and glitching. In addition, nothing 3D accelerated will work."
-                }
+            } else if generationIndex == 3 || generationIndex == 4 || generationIndex == 5 { // turing 16
+                status = GPUPicker.unsupported
+                infoText = "This card is not supported in any version of macOS. You may be able to boot with this card, but you will have no GPU acceleration. This means that macOS will be extremely laggy and you will experience artifacting and glitching. In addition, nothing 3D accelerated will work."
+                cardDisabled = true
             }
         } else if vendorIndex == 2 { // intel
             if generationIndex == 0 { // ivy bridge

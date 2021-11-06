@@ -108,6 +108,9 @@ struct CPUPicker: View {
                 } else if generationIndex == 0 || generationIndex == 1 {
                     status = CPUPicker.partialSupported
                     infoText = "This CPU is supported in macOS with the AMD OS X patches. macOS 12.1 requires RDRAND support, which these CPUs lack; there is currently no fix. Using versions of macOS older than High Sierra is not possible without a custom kernel.\nSupported macOS versions: macOS High Sierra (10.13) to macOS Monterey (12)"
+                } else if generationIndex == 3 {
+                    status = CPUPicker.unsupported
+                    infoText = "This CPU is not supported by the AMD OS X patches. Using this CPU requires a custom kernel."
                 } else {
                     status = CPUPicker.supported
                     infoText = "This CPU is supported in macOS with the AMD OS X patches. The Ryzen Threadripper 3990X requires SMT disabled in the BIOS because macOS's kernel only supports up to 64 threads. Using versions of macOS older than High Sierra is not possible without a custom kernel.\nSupported macOS versions: macOS High Sierra (10.13) to macOS Monterey (12)"

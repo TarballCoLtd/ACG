@@ -13,6 +13,7 @@
 		8AA6FB46272B609B005E28F2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AA6FB45272B609B005E28F2 /* Preview Assets.xcassets */; };
 		8AA6FB4E272B8759005E28F2 /* GPUPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA6FB4D272B8759005E28F2 /* GPUPicker.swift */; };
 		8AF4C6C6273634A200B9EE1F /* CPUPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF4C6C5273634A200B9EE1F /* CPUPicker.swift */; };
+		8AF4C6C827364C6B00B9EE1F /* ChipsetPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF4C6C727364C6B00B9EE1F /* ChipsetPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		8AA6FB47272B609B005E28F2 /* ACG.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ACG.entitlements; sourceTree = "<group>"; };
 		8AA6FB4D272B8759005E28F2 /* GPUPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPUPicker.swift; sourceTree = "<group>"; };
 		8AF4C6C5273634A200B9EE1F /* CPUPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPUPicker.swift; sourceTree = "<group>"; };
+		8AF4C6C727364C6B00B9EE1F /* ChipsetPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipsetPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,7 +42,6 @@
 		8AA6FB32272B609A005E28F2 = {
 			isa = PBXGroup;
 			children = (
-				8AF4C6C5273634A200B9EE1F /* CPUPicker.swift */,
 				8AA6FB3D272B609A005E28F2 /* ACG */,
 				8AA6FB3C272B609A005E28F2 /* Products */,
 			);
@@ -57,6 +58,8 @@
 		8AA6FB3D272B609A005E28F2 /* ACG */ = {
 			isa = PBXGroup;
 			children = (
+				8AF4C6C727364C6B00B9EE1F /* ChipsetPicker.swift */,
+				8AF4C6C5273634A200B9EE1F /* CPUPicker.swift */,
 				8AA6FB3E272B609A005E28F2 /* ACGApp.swift */,
 				8AA6FB40272B609A005E28F2 /* ContentView.swift */,
 				8AA6FB4D272B8759005E28F2 /* GPUPicker.swift */,
@@ -146,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8AF4C6C6273634A200B9EE1F /* CPUPicker.swift in Sources */,
+				8AF4C6C827364C6B00B9EE1F /* ChipsetPicker.swift in Sources */,
 				8AA6FB4E272B8759005E28F2 /* GPUPicker.swift in Sources */,
 				8AA6FB41272B609A005E28F2 /* ContentView.swift in Sources */,
 				8AA6FB3F272B609A005E28F2 /* ACGApp.swift in Sources */,
