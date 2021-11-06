@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A475F302737477E00F589C0 /* WirelessPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A475F2F2737477E00F589C0 /* WirelessPicker.swift */; };
 		8AA6FB3F272B609A005E28F2 /* ACGApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA6FB3E272B609A005E28F2 /* ACGApp.swift */; };
 		8AA6FB41272B609A005E28F2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA6FB40272B609A005E28F2 /* ContentView.swift */; };
 		8AA6FB43272B609B005E28F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AA6FB42272B609B005E28F2 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8A475F2F2737477E00F589C0 /* WirelessPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WirelessPicker.swift; sourceTree = "<group>"; };
 		8AA6FB3B272B609A005E28F2 /* ACG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ACG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AA6FB3E272B609A005E28F2 /* ACGApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACGApp.swift; sourceTree = "<group>"; };
 		8AA6FB40272B609A005E28F2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				8AA6FB42272B609B005E28F2 /* Assets.xcassets */,
 				8AA6FB47272B609B005E28F2 /* ACG.entitlements */,
 				8AA6FB44272B609B005E28F2 /* Preview Content */,
+				8A475F2F2737477E00F589C0 /* WirelessPicker.swift */,
 			);
 			path = ACG;
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8AF4C6C6273634A200B9EE1F /* CPUPicker.swift in Sources */,
+				8A475F302737477E00F589C0 /* WirelessPicker.swift in Sources */,
 				8AF4C6C827364C6B00B9EE1F /* ChipsetPicker.swift in Sources */,
 				8AA6FB4E272B8759005E28F2 /* GPUPicker.swift in Sources */,
 				8AA6FB41272B609A005E28F2 /* ContentView.swift in Sources */,
