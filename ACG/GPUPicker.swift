@@ -40,7 +40,7 @@ struct GPUPicker: View {
     private static let rocketLakeCards: [String] = ["UHD 730", "UHD 750", "UHD P750"]
     // vendor
     @State private var vendor: String = "Vendor"
-    @State private var vendorArray: [String] = ["AMD", "NVIDIA", "Intel"]
+    private let vendorArray: [String] = ["AMD", "NVIDIA", "Intel"]
     // generation
     @State private var generation: String = "Generation"
     @State private var generationDisabled: Bool = true
@@ -58,9 +58,9 @@ struct GPUPicker: View {
     @State private var infoText: String = "None"
     @State private var infoState: Bool = false
     @State private var infoButtonText: String = "More info"
-    @State private var infoButtonState: Bool = false
     var body: some View {
         VStack {
+            Text("GPU")
             HStack {
                 Menu(vendor) {
                     ForEach(Array(vendorArray.enumerated()), id: \.element) { index, element in
@@ -69,7 +69,7 @@ struct GPUPicker: View {
                             card = "Card"
                             generationDisabled = false
                             cardDisabled = true
-                            vendor = vendorArray[index]
+                            vendor = element
                             if index == 0 {
                                 generationArray = GPUPicker.amdGenerations
                             } else if index == 1 {
@@ -153,9 +153,8 @@ struct GPUPicker: View {
             }
             HStack {
                 Button(infoButtonText) {
-                    infoButtonState = !infoButtonState
                     infoState = !infoState
-                    if infoButtonState {
+                    if infoState {
                         infoButtonText = "Less info"
                     } else {
                         infoButtonText = "More info"
@@ -176,17 +175,17 @@ struct GPUPicker: View {
                     return
                 } else if cardIndex == 3 { // RX 550
                     status = GPUPicker.possibleSupported
-                    infoText = "This card will only work with a Baffin core variant. Lexa core models are not supported. You can check this in GPU-Z on Windows.\nSupported macOS versions: macOS Sierra (10.12) to macOS Monterey (12)"
+                    infoText = "This card will only work with a Baffin core variant. Lexa core models are not supported. You can check this in GPU-Z on Windows. Use Shaneee's PAT patch for a significant GPU performance boost.\nSupported macOS versions: macOS Sierra (10.12) to macOS Monterey (12)"
                 } else { // everything else
                     status = GPUPicker.supported
-                    infoText = "This card is natively supported by macOS's drivers. It will work out of the box with no configuration.\nSupported macOS versions: macOS Sierra (10.12) to macOS Monterey (12)"
+                    infoText = "This card is natively supported by macOS's drivers. It will work out of the box with no configuration. Use Shaneee's PAT patch for a significant GPU performance boost.\nSupported macOS versions: macOS Sierra (10.12) to macOS Monterey (12)"
                 }
             } else if generationIndex == 1 { // navi
                 if cardIndex == -1 {
                     return
                 } else {
                     status = GPUPicker.supported
-                    infoText = "This card is natively supported by macOS's drivers. You may need WhateverGreen and the agdpmod=pikera boot argument to boot.\nSupported macOS versions: macOS Catalina (10.15) to macOS Monterey (12)"
+                    infoText = "This card is natively supported by macOS's drivers. You may need WhateverGreen and the agdpmod=pikera boot argument to boot. Use Shaneee's PAT patch for a significant GPU performance boost.\nSupported macOS versions: macOS Catalina (10.15) to macOS Monterey (12)"
                 }
             } else if generationIndex == 2 { // big navi
                 if cardIndex == -1 {
@@ -196,13 +195,13 @@ struct GPUPicker: View {
                     infoText = "This card is not supported in any version of macOS. You may be able to boot with this card, but you will have no GPU acceleration. This means that macOS will be extremely laggy and you will experience artifacting and glitching. In addition, nothing 3D accelerated will work."
                 } else if cardIndex == 5 { // RX 6900 XT
                     status = GPUPicker.possibleSupported
-                    infoText = "This card will only work if it is an XTX variant. XTXH variants of this card are not supported. This can be worked around by flashing an XTX VBIOS. Usually only special edition liquid cooled cards are XTXH variants. You may need WhateverGreen and the agdpmod=pikera boot argument to boot.\nSupported macOS versions: macOS Big Sur (11) to macOS Monterey (12)"
+                    infoText = "This card will only work if it is an XTX variant. XTXH variants of this card are not supported. This can be worked around by flashing an XTX VBIOS. Usually only special edition liquid cooled cards are XTXH variants. You may need WhateverGreen and the agdpmod=pikera boot argument to boot. Use Shaneee's PAT patch for a significant GPU performance boost.\nSupported macOS versions: macOS Big Sur (11) to macOS Monterey (12)"
                 } else if cardIndex == 1 {
                     status = GPUPicker.supported
-                    infoText = "This card is natively supported by macOS's drivers. You may need WhateverGreen and the agdpmod=pikera boot argument to boot.\nSupported macOS versions: macOS Big Sur (11) to macOS Monterey (12)"
+                    infoText = "This card is natively supported by macOS's drivers. You may need WhateverGreen and the agdpmod=pikera boot argument to boot. Use Shaneee's PAT patch for a significant GPU performance boost.\nSupported macOS versions: macOS Big Sur (11) to macOS Monterey (12)"
                 } else { // everything else
                     status = GPUPicker.supported
-                    infoText = "This card is natively supported by macOS's drivers. You may need WhateverGreen and the agdpmod=pikera boot argument to boot.\nSupported macOS versions: macOS Monterey (12)"
+                    infoText = "This card is natively supported by macOS's drivers. You may need WhateverGreen and the agdpmod=pikera boot argument to boot. Use Shaneee's PAT patch for a significant GPU performance boost.\nSupported macOS versions: macOS Monterey (12)"
                 }
             } else if generationIndex == 3 { // vega
                 if cardIndex == -1 {
@@ -212,10 +211,10 @@ struct GPUPicker: View {
                     infoText = "This card is not supported in any version of macOS. You may be able to boot with this card, but you will have no GPU acceleration. This means that macOS will be extremely laggy and you will experience artifacting and glitching. In addition, nothing 3D accelerated will work."
                 } else if cardIndex == 2 || cardIndex == 3 { // vega 10
                     status = GPUPicker.supported
-                    infoText = "This card is natively supported by macOS's drivers. It will work out of the box with no configuration.\nSupported macOS versions: macOS High Sierra (10.13) to macOS Monterey (12)"
+                    infoText = "This card is natively supported by macOS's drivers. It will work out of the box with no configuration. Use Shaneee's PAT patch for a significant GPU performance boost.\nSupported macOS versions: macOS High Sierra (10.13) to macOS Monterey (12)"
                 } else { // vega 20
                     status = GPUPicker.supported
-                    infoText = "This card is natively supported by macOS's drivers. It will work out of the box with no configuration.\nSupported macOS versions: macOS Mojave (10.14) to macOS Monterey (12)"
+                    infoText = "This card is natively supported by macOS's drivers. It will work out of the box with no configuration. Use Shaneee's PAT patch for a significant GPU performance boost.\nSupported macOS versions: macOS Mojave (10.14) to macOS Monterey (12)"
                 }
             }
         } else if vendorIndex == 1 { // NVIDIA
