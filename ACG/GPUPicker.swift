@@ -12,6 +12,8 @@ struct GPUPicker: View {
     private static let supported = "Support status: Natively supported ✅"
     private static let possibleSupported = "Support status: May be supported ⚠️"
     private static let partialSupported = "Support status: Partially supported ⚠️"
+    private static let possibleSupportedIntel = "Support status: May be conditionally supported ⚠️"
+    private static let conditionalSupported = "Support status: Conditionally supported ⚠️"
     private static let possiblePartialSupported = "Support status: May be partially supported ⚠️"
     private static let unsupported = "Support status: Unsupported ❌"
     // generation constants
@@ -46,15 +48,13 @@ struct GPUPicker: View {
     @State private var card: String = "Card"
     @State private var cardDisabled: Bool = true
     @State private var cardArray: [String] = []
-    // states
+    // indices
     @State private var vendorIndex: Int = -1
     @State private var generationIndex: Int = -1
     @State private var cardIndex: Int = -1
-    // status vars
+    // states
     @State private var status: String = "Support status: Unknown ❓"
-    @State private var infoText: String = "None"
-    @State private var infoState: Bool = false
-    @State private var infoButtonText: String = "More info"
+    @State private var infoText: String = ""
     var body: some View {
         VStack {
             Text("GPU")
@@ -139,27 +139,14 @@ struct GPUPicker: View {
                 }.disabled(cardDisabled)
             }
             HStack {
-                Text(infoState ? "\(status)\n\(infoText)" : status)
-                Spacer()
-            }
-            HStack {
-                Button(infoButtonText) {
-                    infoState = !infoState
-                    if infoState {
-                        infoButtonText = "Less info"
-                    } else {
-                        infoButtonText = "More info"
-                    }
-                }
-                .buttonStyle(.plain)
-                .foregroundColor(.blue)
+                Text(infoText == "" ? status : "\(status)\n\n\(infoText)")
                 Spacer()
             }
         }
     }
     private func genStatus() {
         status = "Support status: Unknown ❓"
-        infoText = "None"
+        infoText = ""
         if vendorIndex == 0 { // AMD
             if generationIndex == 0 { // polaris
                 if cardIndex == -1 {
@@ -270,28 +257,28 @@ struct GPUPicker: View {
                 if cardIndex == -1 {
                     return
                 } else {
-                    status = GPUPicker.partialSupported
-                    infoText = "This card is natively supported by macOS's drivers up to macOS Catalina. You will need WhateverGreen and framebuffer patches to get this card working.\nSupported macOS versions: Mac OS X Lion (10.7) to macOS Catalina (10.15)"
+                    status = GPUPicker.conditionalSupported
+                    infoText = "This card is supported by macOS's drivers up to macOS Catalina. You will need WhateverGreen and framebuffer patches to get this card working.\nSupported macOS versions: Mac OS X Lion (10.7) to macOS Catalina (10.15)"
                 }
             } else if generationIndex == 1 { // haswell
                 if cardIndex == -1 {
                     return
                 } else if cardIndex == 3 || cardIndex == 4 { // HD P4600 & P4700
-                    status = GPUPicker.possibleSupported
-                    infoText = "This card is theoretically natively supported, however support has not been confirmed. You will need WhateverGreen and framebuffer patches to get this card working.\nSupported macOS versions: Mac OS X Mountain Lion (10.8) to macOS Monterey (12)"
+                    status = GPUPicker.possibleSupportedIntel
+                    infoText = "This card is theoretically supported, however support has not been confirmed. You will need WhateverGreen and framebuffer patches to get this card working.\nSupported macOS versions: Mac OS X Mountain Lion (10.8) to macOS Monterey (12)"
                 } else {
-                    status = GPUPicker.supported
-                    infoText = "This card is natively supported by macOS's drivers. You will need WhateverGreen and framebuffer patches to get this card working.\nSupported macOS versions: Mac OS X Mountain Lion (10.8) to macOS Monterey (12)"
+                    status = GPUPicker.conditionalSupported
+                    infoText = "This card is supported by macOS's drivers. You will need WhateverGreen and framebuffer patches to get this card working.\nSupported macOS versions: Mac OS X Mountain Lion (10.8) to macOS Monterey (12)"
                 }
             } else if generationIndex == 2 { // broadwell
                 if cardIndex == -1 {
                     return
                 } else if cardIndex == 3 { // HD P5700
-                    status = GPUPicker.possibleSupported
-                    infoText = "This card is theoretically natively supported, however support has not been confirmed. You will need WhateverGreen and framebuffer patches to get this card working.\nSupported macOS versions: Mac OS X Yosemite (10.10) to macOS Monterey (12)"
+                    status = GPUPicker.possibleSupportedIntel
+                    infoText = "This card is theoretically supported, however support has not been confirmed. You will need WhateverGreen and framebuffer patches to get this card working.\nSupported macOS versions: Mac OS X Yosemite (10.10) to macOS Monterey (12)"
                 } else {
-                    status = GPUPicker.supported
-                    infoText = "This card is natively supported by macOS's drivers. You will need WhateverGreen and framebuffer patches to get this card working.\nSupported macOS versions: Mac OS X Yosemite (10.10) to macOS Monterey (12)"
+                    status = GPUPicker.conditionalSupported
+                    infoText = "This card is supported by macOS's drivers. You will need WhateverGreen and framebuffer patches to get this card working.\nSupported macOS versions: Mac OS X Yosemite (10.10) to macOS Monterey (12)"
                 }
             } else if generationIndex == 3 { // skylake
                 if cardIndex == -1 {
@@ -300,8 +287,8 @@ struct GPUPicker: View {
                     status = GPUPicker.unsupported
                     infoText = "This card is not supported in any version of macOS. You may be able to boot with this card, but you will have no GPU acceleration. This means that macOS will be extremely laggy and you will experience artifacting and glitching. In addition, nothing 3D accelerated will work."
                 } else {
-                    status = GPUPicker.supported
-                    infoText = "This card is natively supported by macOS's drivers. You will need WhateverGreen and framebuffer patches to get this card working.\nSupported macOS versions: Mac OS X El Capitan (10.11) to macOS Monterey (12)"
+                    status = GPUPicker.conditionalSupported
+                    infoText = "This card is supported by macOS's drivers. You will need WhateverGreen and framebuffer patches to get this card working.\nSupported macOS versions: Mac OS X El Capitan (10.11) to macOS Monterey (12)"
                 }
             } else if generationIndex == 4 { // kaby lake
                 if cardIndex == -1 {
@@ -310,8 +297,8 @@ struct GPUPicker: View {
                     status = GPUPicker.unsupported
                     infoText = "This card is not supported in any version of macOS. You may be able to boot with this card, but you will have no GPU acceleration. This means that macOS will be extremely laggy and you will experience artifacting and glitching. In addition, nothing 3D accelerated will work."
                 } else {
-                    status = GPUPicker.supported
-                    infoText = "This card is natively supported by macOS's drivers. You will need WhateverGreen and framebuffer patches to get this card working.\nSupported macOS versions: macOS Sierra (10.12) to macOS Monterey (12)"
+                    status = GPUPicker.conditionalSupported
+                    infoText = "This card is supported by macOS's drivers. You will need WhateverGreen and framebuffer patches to get this card working.\nSupported macOS versions: macOS Sierra (10.12) to macOS Monterey (12)"
                 }
             } else if generationIndex == 5 { // coffee/comet/ice lake
                 if cardIndex == -1 {
@@ -320,8 +307,8 @@ struct GPUPicker: View {
                     status = GPUPicker.unsupported
                     infoText = "This card is not supported in any version of macOS. You may be able to boot with this card, but you will have no GPU acceleration. This means that macOS will be extremely laggy and you will experience artifacting and glitching. In addition, nothing 3D accelerated will work."
                 } else {
-                    status = GPUPicker.supported
-                    infoText = "This card is natively supported by macOS's drivers. You will need WhateverGreen and framebuffer patches to get this card working.\nSupported macOS versions: macOS Catalina (10.15) to macOS Monterey (12)"
+                    status = GPUPicker.conditionalSupported
+                    infoText = "This card is supported by macOS's drivers. You will need WhateverGreen and framebuffer patches to get this card working.\nSupported macOS versions: macOS Catalina (10.15) to macOS Monterey (12)"
                 }
             } else if generationIndex == 6 { // rocket lake
                 if cardIndex == -1 {

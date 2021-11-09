@@ -23,15 +23,13 @@ struct ChipsetPicker: View {
     @State private var chipset: String = "Chipset"
     @State private var chipsetDisabled: Bool = true
     @State private var chipsetArray: [String] = []
-    // states
+    // indices
     @State private var vendorIndex: Int = -1
     @State private var socketIndex: Int = -1
     @State private var chipsetIndex: Int = -1
-    // status vars
+    // states
     @State private var status: String = "Support status: Unknown ❓"
-    @State private var infoState: Bool = false
-    @State private var infoText: String = "None"
-    @State private var infoButtonText: String = "More info"
+    @State private var infoText: String = ""
     var body: some View {
         VStack {
             Text("Chipset")
@@ -72,27 +70,14 @@ struct ChipsetPicker: View {
                 }.disabled(chipsetDisabled)
             }
             HStack {
-                Text(infoState ? "\(status)\n\(infoText)" : status)
-                Spacer()
-            }
-            HStack {
-                Button(infoButtonText) {
-                    infoState = !infoState
-                    if infoState {
-                        infoButtonText = "Less info"
-                    } else {
-                        infoButtonText = "More info"
-                    }
-                }
-                .buttonStyle(.plain)
-                .foregroundColor(.blue)
+                Text(infoText == "" ? status : "\(status)\n\n\(infoText)")
                 Spacer()
             }
         }
     }
     private func genStatus() {
         status = "Support status: Unknown ❓"
-        infoText = "None"
+        infoText = ""
         if vendorIndex == 0 && socketIndex == 1 {
             if chipsetIndex == -1 {
                 return
