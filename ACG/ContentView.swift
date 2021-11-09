@@ -13,6 +13,7 @@ struct ContentView: View {
             CPUPicker()
             ChipsetPicker()
             GPUPicker()
+            WirelessPicker()
             Spacer()
         }.padding()
     }
