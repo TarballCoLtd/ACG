@@ -1,14 +1,14 @@
 //
-//  ACGApp.swift
-//  ACG
+//  ACGiOSApp.swift
+//  ACGiOS
 //
-//  Created by Alyx Ferrari on 10/28/21.
+//  Created by Alyx Ferrari on 11/12/21.
 //
 
 import SwiftUI
 
 @main
-struct ACGApp: App {
+struct ACGiOSApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C3CF698273F6D26002B8579 /* ACGiOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3CF697273F6D26002B8579 /* ACGiOSApp.swift */; };
+		1C3CF69C273F6D28002B8579 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C3CF69B273F6D28002B8579 /* Assets.xcassets */; };
+		1C3CF69F273F6D28002B8579 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C3CF69E273F6D28002B8579 /* Preview Assets.xcassets */; };
+		1C3CF6A4273F6D48002B8579 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3CF6A3273F6D48002B8579 /* ContentView.swift */; };
+		1C3CF6A5273F6D89002B8579 /* NICPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCE9125273C19E2003E4D67 /* NICPicker.swift */; };
+		1C3CF6A6273F6D89002B8579 /* CPUPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF4C6C5273634A200B9EE1F /* CPUPicker.swift */; };
+		1C3CF6A7273F6D89002B8579 /* GPUPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA6FB4D272B8759005E28F2 /* GPUPicker.swift */; };
+		1C3CF6A8273F6D89002B8579 /* WirelessPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A475F2F2737477E00F589C0 /* WirelessPicker.swift */; };
+		1C3CF6A9273F6D89002B8579 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3CF6A3273F6D48002B8579 /* ContentView.swift */; };
+		1C3CF6AA273F6D89002B8579 /* ChipsetPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF4C6C727364C6B00B9EE1F /* ChipsetPicker.swift */; };
 		1CCE9126273C19E2003E4D67 /* NICPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCE9125273C19E2003E4D67 /* NICPicker.swift */; };
 		8A475F302737477E00F589C0 /* WirelessPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A475F2F2737477E00F589C0 /* WirelessPicker.swift */; };
 		8AA6FB3F272B609A005E28F2 /* ACGApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA6FB3E272B609A005E28F2 /* ACGApp.swift */; };
@@ -18,6 +28,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C3CF695273F6D26002B8579 /* ACGiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ACGiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C3CF697273F6D26002B8579 /* ACGiOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACGiOSApp.swift; sourceTree = "<group>"; };
+		1C3CF69B273F6D28002B8579 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1C3CF69E273F6D28002B8579 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1C3CF6A3273F6D48002B8579 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1CCE9125273C19E2003E4D67 /* NICPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NICPicker.swift; sourceTree = "<group>"; };
 		8A475F2F2737477E00F589C0 /* WirelessPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WirelessPicker.swift; sourceTree = "<group>"; };
 		8AA6FB3B272B609A005E28F2 /* ACG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ACG.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -31,6 +46,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1C3CF692273F6D26002B8579 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8AA6FB38272B609A005E28F2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -41,10 +63,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C3CF696273F6D26002B8579 /* ACGiOS */ = {
+			isa = PBXGroup;
+			children = (
+				1C3CF697273F6D26002B8579 /* ACGiOSApp.swift */,
+				1C3CF69B273F6D28002B8579 /* Assets.xcassets */,
+				1C3CF69D273F6D28002B8579 /* Preview Content */,
+			);
+			path = ACGiOS;
+			sourceTree = "<group>";
+		};
+		1C3CF69D273F6D28002B8579 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				1C3CF69E273F6D28002B8579 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		8AA6FB32272B609A005E28F2 = {
 			isa = PBXGroup;
 			children = (
 				8AA6FB3D272B609A005E28F2 /* ACG */,
+				1C3CF696273F6D26002B8579 /* ACGiOS */,
 				8AA6FB3C272B609A005E28F2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				8AA6FB3B272B609A005E28F2 /* ACG.app */,
+				1C3CF695273F6D26002B8579 /* ACGiOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -64,11 +106,12 @@
 				8AF4C6C5273634A200B9EE1F /* CPUPicker.swift */,
 				8AA6FB3E272B609A005E28F2 /* ACGApp.swift */,
 				8AA6FB4D272B8759005E28F2 /* GPUPicker.swift */,
+				8A475F2F2737477E00F589C0 /* WirelessPicker.swift */,
+				1CCE9125273C19E2003E4D67 /* NICPicker.swift */,
 				8AA6FB42272B609B005E28F2 /* Assets.xcassets */,
 				8AA6FB47272B609B005E28F2 /* ACG.entitlements */,
 				8AA6FB44272B609B005E28F2 /* Preview Content */,
-				8A475F2F2737477E00F589C0 /* WirelessPicker.swift */,
-				1CCE9125273C19E2003E4D67 /* NICPicker.swift */,
+				1C3CF6A3273F6D48002B8579 /* ContentView.swift */,
 			);
 			path = ACG;
 			sourceTree = "<group>";
@@ -84,6 +127,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		1C3CF694273F6D26002B8579 /* ACGiOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1C3CF6A0273F6D28002B8579 /* Build configuration list for PBXNativeTarget "ACGiOS" */;
+			buildPhases = (
+				1C3CF691273F6D26002B8579 /* Sources */,
+				1C3CF692273F6D26002B8579 /* Frameworks */,
+				1C3CF693273F6D26002B8579 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ACGiOS;
+			productName = ACGiOS;
+			productReference = 1C3CF695273F6D26002B8579 /* ACGiOS.app */;
+			productType = "com.apple.product-type.application";
+		};
 		8AA6FB3A272B609A005E28F2 /* ACG */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8AA6FB4A272B609B005E28F2 /* Build configuration list for PBXNativeTarget "ACG" */;
@@ -111,6 +171,9 @@
 				LastSwiftUpdateCheck = 1310;
 				LastUpgradeCheck = 1310;
 				TargetAttributes = {
+					1C3CF694273F6D26002B8579 = {
+						CreatedOnToolsVersion = 13.1;
+					};
 					8AA6FB3A272B609A005E28F2 = {
 						CreatedOnToolsVersion = 13.1;
 					};
@@ -130,11 +193,21 @@
 			projectRoot = "";
 			targets = (
 				8AA6FB3A272B609A005E28F2 /* ACG */,
+				1C3CF694273F6D26002B8579 /* ACGiOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1C3CF693273F6D26002B8579 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C3CF69F273F6D28002B8579 /* Preview Assets.xcassets in Resources */,
+				1C3CF69C273F6D28002B8579 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8AA6FB39272B609A005E28F2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -147,12 +220,27 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1C3CF691273F6D26002B8579 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C3CF6A7273F6D89002B8579 /* GPUPicker.swift in Sources */,
+				1C3CF6A8273F6D89002B8579 /* WirelessPicker.swift in Sources */,
+				1C3CF6A9273F6D89002B8579 /* ContentView.swift in Sources */,
+				1C3CF6A6273F6D89002B8579 /* CPUPicker.swift in Sources */,
+				1C3CF6AA273F6D89002B8579 /* ChipsetPicker.swift in Sources */,
+				1C3CF6A5273F6D89002B8579 /* NICPicker.swift in Sources */,
+				1C3CF698273F6D26002B8579 /* ACGiOSApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8AA6FB37272B609A005E28F2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				8AF4C6C6273634A200B9EE1F /* CPUPicker.swift in Sources */,
 				8A475F302737477E00F589C0 /* WirelessPicker.swift in Sources */,
+				1C3CF6A4273F6D48002B8579 /* ContentView.swift in Sources */,
 				8AF4C6C827364C6B00B9EE1F /* ChipsetPicker.swift in Sources */,
 				8AA6FB4E272B8759005E28F2 /* GPUPicker.swift in Sources */,
 				1CCE9126273C19E2003E4D67 /* NICPicker.swift in Sources */,
@@ -163,6 +251,69 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		1C3CF6A1273F6D28002B8579 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ACGiOS/Preview Content\"";
+				DEVELOPMENT_TEAM = HU5YG39P29;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alyxferrari.ACGiOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1C3CF6A2273F6D28002B8579 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ACGiOS/Preview Content\"";
+				DEVELOPMENT_TEAM = HU5YG39P29;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alyxferrari.ACGiOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		8AA6FB48272B609B005E28F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -343,6 +494,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1C3CF6A0273F6D28002B8579 /* Build configuration list for PBXNativeTarget "ACGiOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C3CF6A1273F6D28002B8579 /* Debug */,
+				1C3CF6A2273F6D28002B8579 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		8AA6FB36272B609A005E28F2 /* Build configuration list for PBXProject "ACG" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

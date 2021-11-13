@@ -65,7 +65,9 @@ struct NICPicker: View {
             }
             HStack {
                 Text(infoText == "" ? status : "\(status)\n\n\(infoText)")
+                #if os(macOS)
                 Spacer()
+                #endif
             }
         }
     }
