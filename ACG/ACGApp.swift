@@ -11,7 +11,13 @@ import SwiftUI
 struct ACGApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ScrollView {
+                CPUPicker()
+                ChipsetPicker()
+                GPUPicker()
+                WirelessPicker()
+                Spacer()
+            }.padding()
         }
     }
 }

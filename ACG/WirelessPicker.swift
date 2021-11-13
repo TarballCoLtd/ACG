@@ -35,7 +35,7 @@ struct WirelessPicker: View {
     @State private var infoText: String = ""
     var body: some View {
         VStack {
-            Text("Chipset")
+            Text("Wireless")
             HStack {
                 Menu(vendor) {
                     ForEach(Array(WirelessPicker.vendorArray.enumerated()), id: \.element) { index, element in
