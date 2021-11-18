@@ -19,6 +19,14 @@
 		1C3CF6AA273F6D89002B8579 /* ChipsetPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF4C6C727364C6B00B9EE1F /* ChipsetPicker.swift */; };
 		1CCE9126273C19E2003E4D67 /* NICPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCE9125273C19E2003E4D67 /* NICPicker.swift */; };
 		8A475F302737477E00F589C0 /* WirelessPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A475F2F2737477E00F589C0 /* WirelessPicker.swift */; };
+		8A5F10912745E70600759329 /* ACGwatch WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 8A5F10902745E70600759329 /* ACGwatch WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8A5F10962745E70700759329 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A5F10952745E70700759329 /* Assets.xcassets */; };
+		8A5F109C2745E70700759329 /* ACGwatch WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8A5F109B2745E70700759329 /* ACGwatch WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8A5F10A12745E70700759329 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5F10A02745E70700759329 /* ContentView.swift */; };
+		8A5F10A32745E70700759329 /* ACGApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5F10A22745E70700759329 /* ACGApp.swift */; };
+		8A5F10A52745E70700759329 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5F10A42745E70700759329 /* ComplicationController.swift */; };
+		8A5F10A72745E70800759329 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A5F10A62745E70800759329 /* Assets.xcassets */; };
+		8A5F10AA2745E70800759329 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A5F10A92745E70800759329 /* Preview Assets.xcassets */; };
 		8AA6FB3F272B609A005E28F2 /* ACGApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA6FB3E272B609A005E28F2 /* ACGApp.swift */; };
 		8AA6FB43272B609B005E28F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AA6FB42272B609B005E28F2 /* Assets.xcassets */; };
 		8AA6FB46272B609B005E28F2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AA6FB45272B609B005E28F2 /* Preview Assets.xcassets */; };
@@ -26,6 +34,48 @@
 		8AF4C6C6273634A200B9EE1F /* CPUPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF4C6C5273634A200B9EE1F /* CPUPicker.swift */; };
 		8AF4C6C827364C6B00B9EE1F /* ChipsetPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF4C6C727364C6B00B9EE1F /* ChipsetPicker.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8A5F10922745E70600759329 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8AA6FB33272B609A005E28F2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A5F108F2745E70600759329;
+			remoteInfo = "ACGwatch WatchKit App";
+		};
+		8A5F109D2745E70700759329 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8AA6FB33272B609A005E28F2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A5F109A2745E70700759329;
+			remoteInfo = "ACGwatch WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8A5F10AE2745E70800759329 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				8A5F10912745E70600759329 /* ACGwatch WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A5F10B12745E70800759329 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				8A5F109C2745E70700759329 /* ACGwatch WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1C3CF695273F6D26002B8579 /* ACGiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ACGiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,6 +85,16 @@
 		1C3CF6A3273F6D48002B8579 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1CCE9125273C19E2003E4D67 /* NICPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NICPicker.swift; sourceTree = "<group>"; };
 		8A475F2F2737477E00F589C0 /* WirelessPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WirelessPicker.swift; sourceTree = "<group>"; };
+		8A5F108D2745E70600759329 /* ACGwatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ACGwatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A5F10902745E70600759329 /* ACGwatch WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ACGwatch WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A5F10952745E70700759329 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8A5F109B2745E70700759329 /* ACGwatch WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "ACGwatch WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A5F10A02745E70700759329 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8A5F10A22745E70700759329 /* ACGApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACGApp.swift; sourceTree = "<group>"; };
+		8A5F10A42745E70700759329 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		8A5F10A62745E70800759329 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8A5F10A92745E70800759329 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8A5F10AB2745E70800759329 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8AA6FB3B272B609A005E28F2 /* ACG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ACG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AA6FB3E272B609A005E28F2 /* ACGApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACGApp.swift; sourceTree = "<group>"; };
 		8AA6FB42272B609B005E28F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -47,6 +107,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		1C3CF692273F6D26002B8579 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A5F10982745E70700759329 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -81,11 +148,42 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		8A5F10942745E70600759329 /* ACGwatch WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				8A5F10952745E70700759329 /* Assets.xcassets */,
+			);
+			path = "ACGwatch WatchKit App";
+			sourceTree = "<group>";
+		};
+		8A5F109F2745E70700759329 /* ACGwatch WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				8A5F10A02745E70700759329 /* ContentView.swift */,
+				8A5F10A22745E70700759329 /* ACGApp.swift */,
+				8A5F10A42745E70700759329 /* ComplicationController.swift */,
+				8A5F10A62745E70800759329 /* Assets.xcassets */,
+				8A5F10AB2745E70800759329 /* Info.plist */,
+				8A5F10A82745E70800759329 /* Preview Content */,
+			);
+			path = "ACGwatch WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		8A5F10A82745E70800759329 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				8A5F10A92745E70800759329 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		8AA6FB32272B609A005E28F2 = {
 			isa = PBXGroup;
 			children = (
 				8AA6FB3D272B609A005E28F2 /* ACG */,
 				1C3CF696273F6D26002B8579 /* ACGiOS */,
+				8A5F10942745E70600759329 /* ACGwatch WatchKit App */,
+				8A5F109F2745E70700759329 /* ACGwatch WatchKit Extension */,
 				8AA6FB3C272B609A005E28F2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -95,6 +193,9 @@
 			children = (
 				8AA6FB3B272B609A005E28F2 /* ACG.app */,
 				1C3CF695273F6D26002B8579 /* ACGiOS.app */,
+				8A5F108D2745E70600759329 /* ACGwatch.app */,
+				8A5F10902745E70600759329 /* ACGwatch WatchKit App.app */,
+				8A5F109B2745E70700759329 /* ACGwatch WatchKit Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -144,6 +245,57 @@
 			productReference = 1C3CF695273F6D26002B8579 /* ACGiOS.app */;
 			productType = "com.apple.product-type.application";
 		};
+		8A5F108C2745E70600759329 /* ACGwatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A5F10B62745E70800759329 /* Build configuration list for PBXNativeTarget "ACGwatch" */;
+			buildPhases = (
+				8A5F108B2745E70600759329 /* Resources */,
+				8A5F10AE2745E70800759329 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8A5F10932745E70600759329 /* PBXTargetDependency */,
+			);
+			name = ACGwatch;
+			productName = ACGwatch;
+			productReference = 8A5F108D2745E70600759329 /* ACGwatch.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		8A5F108F2745E70600759329 /* ACGwatch WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A5F10B52745E70800759329 /* Build configuration list for PBXNativeTarget "ACGwatch WatchKit App" */;
+			buildPhases = (
+				8A5F108E2745E70600759329 /* Resources */,
+				8A5F10B12745E70800759329 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8A5F109E2745E70700759329 /* PBXTargetDependency */,
+			);
+			name = "ACGwatch WatchKit App";
+			productName = "ACGwatch WatchKit App";
+			productReference = 8A5F10902745E70600759329 /* ACGwatch WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		8A5F109A2745E70700759329 /* ACGwatch WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A5F10B42745E70800759329 /* Build configuration list for PBXNativeTarget "ACGwatch WatchKit Extension" */;
+			buildPhases = (
+				8A5F10972745E70700759329 /* Sources */,
+				8A5F10982745E70700759329 /* Frameworks */,
+				8A5F10992745E70700759329 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ACGwatch WatchKit Extension";
+			productName = "ACGwatch WatchKit Extension";
+			productReference = 8A5F109B2745E70700759329 /* ACGwatch WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		8AA6FB3A272B609A005E28F2 /* ACG */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8AA6FB4A272B609B005E28F2 /* Build configuration list for PBXNativeTarget "ACG" */;
@@ -174,6 +326,15 @@
 					1C3CF694273F6D26002B8579 = {
 						CreatedOnToolsVersion = 13.1;
 					};
+					8A5F108C2745E70600759329 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					8A5F108F2745E70600759329 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					8A5F109A2745E70700759329 = {
+						CreatedOnToolsVersion = 13.1;
+					};
 					8AA6FB3A272B609A005E28F2 = {
 						CreatedOnToolsVersion = 13.1;
 					};
@@ -194,6 +355,9 @@
 			targets = (
 				8AA6FB3A272B609A005E28F2 /* ACG */,
 				1C3CF694273F6D26002B8579 /* ACGiOS */,
+				8A5F108C2745E70600759329 /* ACGwatch */,
+				8A5F108F2745E70600759329 /* ACGwatch WatchKit App */,
+				8A5F109A2745E70700759329 /* ACGwatch WatchKit Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -205,6 +369,30 @@
 			files = (
 				1C3CF69F273F6D28002B8579 /* Preview Assets.xcassets in Resources */,
 				1C3CF69C273F6D28002B8579 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A5F108B2745E70600759329 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A5F108E2745E70600759329 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A5F10962745E70700759329 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A5F10992745E70700759329 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A5F10AA2745E70800759329 /* Preview Assets.xcassets in Resources */,
+				8A5F10A72745E70800759329 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,6 +422,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8A5F10972745E70700759329 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A5F10A12745E70700759329 /* ContentView.swift in Sources */,
+				8A5F10A32745E70700759329 /* ACGApp.swift in Sources */,
+				8A5F10A52745E70700759329 /* ComplicationController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8AA6FB37272B609A005E28F2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -249,6 +447,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8A5F10932745E70600759329 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A5F108F2745E70600759329 /* ACGwatch WatchKit App */;
+			targetProxy = 8A5F10922745E70600759329 /* PBXContainerItemProxy */;
+		};
+		8A5F109E2745E70700759329 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A5F109A2745E70700759329 /* ACGwatch WatchKit Extension */;
+			targetProxy = 8A5F109D2745E70700759329 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1C3CF6A1273F6D28002B8579 /* Debug */ = {
@@ -311,6 +522,151 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8A5F10AC2745E70800759329 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HU5YG39P29;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alyxferrari.ACGwatch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		8A5F10AD2745E70800759329 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HU5YG39P29;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alyxferrari.ACGwatch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8A5F10AF2745E70800759329 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HU5YG39P29;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = ACGwatch_WatchKit_Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = "ACGwatch WatchKit App";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alyxferrari.ACGwatch.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+			};
+			name = Debug;
+		};
+		8A5F10B02745E70800759329 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HU5YG39P29;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = ACGwatch_WatchKit_Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = "ACGwatch WatchKit App";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alyxferrari.ACGwatch.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+			};
+			name = Release;
+		};
+		8A5F10B22745E70800759329 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ACGwatch WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = HU5YG39P29;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ACGwatch WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "ACGwatch WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alyxferrari.ACGwatch.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+			};
+			name = Debug;
+		};
+		8A5F10B32745E70800759329 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ACGwatch WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = HU5YG39P29;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ACGwatch WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "ACGwatch WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alyxferrari.ACGwatch.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Release;
 		};
@@ -499,6 +855,33 @@
 			buildConfigurations = (
 				1C3CF6A1273F6D28002B8579 /* Debug */,
 				1C3CF6A2273F6D28002B8579 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8A5F10B42745E70800759329 /* Build configuration list for PBXNativeTarget "ACGwatch WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A5F10B22745E70800759329 /* Debug */,
+				8A5F10B32745E70800759329 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8A5F10B52745E70800759329 /* Build configuration list for PBXNativeTarget "ACGwatch WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A5F10AF2745E70800759329 /* Debug */,
+				8A5F10B02745E70800759329 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8A5F10B62745E70800759329 /* Build configuration list for PBXNativeTarget "ACGwatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A5F10AC2745E70800759329 /* Debug */,
+				8A5F10AD2745E70800759329 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
