@@ -88,7 +88,7 @@ struct ChipsetPicker: View {
                 infoText = "This chipset is supported, but requires SSDT-CPUR."
             } else {
                 status = ChipsetPicker.supported
-                infoText = "This chipset is supported and will work without any configuration."
+                infoText = "This chipset is supported and will work without any special configuration."
             }
         }
     }

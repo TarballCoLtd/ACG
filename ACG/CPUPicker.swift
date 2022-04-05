@@ -94,7 +94,7 @@ struct CPUPicker: View {
                     return
                 } else if generationIndex == 0 || generationIndex == 1 {
                     status = CPUPicker.partialSupported
-                    infoText = "This CPU is supported in macOS with the AMD OS X patches. macOS 12.1 requires RDRAND support, which these CPUs lack; there is currently no fix. Using versions of macOS older than High Sierra is not possible without a custom kernel.\nSupported macOS versions: macOS High Sierra (10.13) to macOS Monterey (12)"
+                    infoText = "This CPU is supported in macOS with the AMD OS X patches. macOS 12.1 requires RDRAND support, which these CPUs lack. Using the 'fix RDRAND' kernel patch from the OpenCore sample config may fix this. Using versions of macOS older than High Sierra is not possible without a custom kernel.\nSupported macOS versions: macOS High Sierra (10.13) to macOS Monterey (12)"
                 } else if generationIndex == 3 {
                     status = CPUPicker.unsupported
                     infoText = "This CPU is not supported by the AMD OS X patches. Using this CPU requires a custom kernel."
